@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="JecBridge Desktop connects your local project folders to AI assistants through the Model Context Protocol.">
+  <meta property="og:title" content="JecBridge — Your projects, connected to AI">
+  <meta property="og:description" content="Connect local project folders to MCP-compatible AI tools from one simple desktop app.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>JecBridge — Your projects, connected to AI</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080b12;--surface:#0e1420;--surface2:#121b2a;--line:#202c3e;--muted:#9aa9bd;--text:#f4f7fc;--blue:#9bc3ff;--accent:#6ca3ff;--green:#8ce0ad}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:radial-gradient(ellipse 70% 38% at 50% -8%,#1d3558 0,transparent 72%),var(--bg);color:var(--text);font:15px/1.7 "DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+    header{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}
+    .brand{display:flex;align-items:center;gap:12px;font:700 19px "Space Grotesk",sans-serif;letter-spacing:-.055em}
+    .brand img{width:37px;height:37px;object-fit:contain;border-radius:10px}
+    nav{display:flex;align-items:center;gap:30px;color:#a9b6c9;font-size:13px;font-weight:600}
+    nav a{transition:color .2s}nav a:hover,.author a:hover{color:#fff}
+    .nav-cta{padding:9px 15px;border:1px solid #46658e;border-radius:9px;color:#dceaff;background:#122039}
+    .hero{text-align:center;padding:108px 0 88px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #304967;background:#101e32;border-radius:99px;padding:6px 12px;color:#c1d9ff;font-size:10px;font-weight:800;letter-spacing:.13em}
+    .dot{width:7px;height:7px;border-radius:50%;background:#8ce0ad;box-shadow:0 0 13px #8ce0ad}
+    h1,h2,h3{font-family:"Space Grotesk",sans-serif}
+    h1{font-size:clamp(46px,7.6vw,82px);line-height:1.015;letter-spacing:-.075em;margin:27px auto 22px;max-width:900px;font-weight:700}
+    h1 span{background:linear-gradient(100deg,#fff 10%,#b9d6ff 54%,#78aaff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{max-width:660px;margin:0 auto;color:#aab8cb;font-size:17px;line-height:1.8}
+    .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 19px;border-radius:10px;font-size:13px;font-weight:800;transition:transform .2s,box-shadow .2s,border-color .2s}
+    .button:hover{transform:translateY(-2px)}
+    .primary{background:linear-gradient(135deg,#e4efff,#a9cbff);color:#0a1424;box-shadow:0 8px 35px #5794f33a}
+    .primary:hover{box-shadow:0 12px 42px #5794f355}
+    .secondary{border:1px solid #34445b;background:#111925;color:#e3ebf8}
+    .download-meta{margin-top:13px;color:#75869d;font-size:11px}
+    .preview{position:relative;margin:62px auto 0;max-width:870px;border:1px solid #34445c;border-radius:16px;background:linear-gradient(145deg,#172131,#0c111a);padding:11px;box-shadow:0 35px 110px #0009,0 0 70px #5794f315;text-align:left}
+    .preview:before{content:"";position:absolute;inset:-1px;border-radius:16px;background:linear-gradient(120deg,#8cbaff35,transparent 35%,transparent 70%,#8cbaff20);pointer-events:none}
+    .windowbar{height:29px;display:flex;align-items:center;gap:6px;padding:0 8px 10px;border-bottom:1px solid #ffffff12}
+    .windowbar i{width:7px;height:7px;border-radius:50%;background:#5a6a80}
+    .windowtitle{margin:auto;color:#8798b0;font-size:9px;letter-spacing:.14em}
+    .mock{display:grid;grid-template-columns:185px 1fr;min-height:225px}
+    .sidebar{padding:20px 13px;border-right:1px solid #ffffff12}
+    .side-label{font-size:9px;color:#6d7e96;letter-spacing:.15em;font-weight:800;margin:0 0 13px 8px}
+    .side-item{padding:9px 10px;border-radius:7px;color:#aebbd0;font-size:11px;margin-bottom:5px}
+    .side-item.active{background:#203552;color:#e1edff}
+    .mainmock{padding:21px 24px}
+    .mock-heading{font:600 18px "Space Grotesk";letter-spacing:-.04em;margin-bottom:3px}
+    .mock-sub{font-size:10px;color:#8191a8;margin-bottom:17px}
+    .project{display:flex;align-items:center;justify-content:space-between;border:1px solid #2b394d;background:#131d2b;padding:12px 14px;border-radius:9px;margin-bottom:9px}
+    .project-name{font-size:11px;font-weight:700}
+    .project-path{font-size:9px;color:#7f90a8;margin-top:3px}
+    .status{font-size:9px;color:#a2e8bb;display:flex;align-items:center;gap:6px}
+    .status:before{content:"";width:6px;height:6px;border-radius:50%;background:#80dca2;box-shadow:0 0 8px #80dca2}
+    .section{padding:76px 0}
+    .section-kicker{text-transform:uppercase;letter-spacing:.17em;color:#8ebaff;font-size:10px;font-weight:800}
+    h2{font-size:clamp(29px,4.2vw,42px);line-height:1.15;letter-spacing:-.06em;margin:12px 0}
+    .section-lead{color:var(--muted);max-width:600px;margin:0;font-size:14px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:32px}
+    .feature{border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#121b29,#0c111a);padding:23px;transition:transform .2s,border-color .2s}
+    .feature:hover{transform:translateY(-4px);border-color:#405b7e}
+    .feature-icon{width:38px;height:38px;display:grid;place-items:center;border:1px solid #344e70;background:#172940;color:#b5d2ff;border-radius:10px;font-size:17px;margin-bottom:18px}
+    .feature h3{font-size:15px;margin:0 0 7px;letter-spacing:-.035em}
+    .feature p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:33px}
+    .step{border-top:1px solid #34445a;padding-top:17px}
+    .step-num{font-size:10px;color:#8ebaff;letter-spacing:.13em;font-weight:800}
+    .step h3{font-size:15px;margin:8px 0 5px;letter-spacing:-.03em}
+    .step p{font-size:12px;color:var(--muted);margin:0}
+    .download-panel{border:1px solid #344c6b;background:radial-gradient(ellipse at 90% 0%,#203b60 0,transparent 58%),linear-gradient(120deg,#121c2b,#0d131d);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .download-panel h2{margin:0 0 9px}
+    .download-panel p{color:var(--muted);margin:0;font-size:12px}
+    .author{margin-top:23px;color:#8998ad;font-size:12px}
+    .author a{color:#c6dcff;text-decoration:underline;text-decoration-color:#526e93;text-underline-offset:4px}
+    footer{border-top:1px solid #ffffff12;padding:24px 0;color:#75849a;font-size:11px}
+    .foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:720px){.wrap{width:min(100% - 36px,560px)}header{height:68px}nav{gap:12px}nav a:not(.nav-cta){display:none}.hero{padding:78px 0 55px}h1{font-size:clamp(43px,12vw,62px)}.lead{font-size:15px}.preview{margin-top:42px}.mock{grid-template-columns:1fr}.sidebar{display:none}.mainmock{padding:17px 9px}.features,.steps{grid-template-columns:1fr;gap:12px}.feature{padding:20px}.download-panel{align-items:flex-start;flex-direction:column;padding:25px}.section{padding:55px 0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="#" aria-label="JecBridge home"><img src="assets/icon.png" alt="JecBridge logo"><span>JecBridge</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a class="nav-cta" href="#download">Download</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <div class="eyebrow"><span class="dot"></span> DESKTOP APP <span>·</span> WINDOWS</div>
+      <h1>Your projects.<br><span>Connected to AI.</span></h1>
+      <p class="lead">Bring your local folders into your AI workflow. JecBridge makes it simple to connect project workspaces to MCP-compatible AI assistants — all from one desktop app.</p>
+      <div class="actions">
+        <a class="button primary" href="releases/JecBridge%20Desktop%20Setup%200.1.0.exe" download><span aria-hidden="true">↓</span> Download for Windows</a>
+        <a class="button secondary" href="#how-it-works">Explore how it works <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="download-meta">Version 0.1.0&nbsp; · &nbsp;Windows 10/11&nbsp; · &nbsp;64-bit&nbsp; · &nbsp;Free beta</div>
+      <div class="preview" aria-label="Illustrative JecBridge Desktop interface preview">
+        <div class="windowbar"><i></i><i></i><i></i><span class="windowtitle">JECBRIDGE DESKTOP</span></div>
+        <div class="mock">
+          <aside class="sidebar"><div class="side-label">WORKSPACE</div><div class="side-item active">▦ &nbsp; Projects</div><div class="side-item">⌘ &nbsp; Connections</div><div class="side-item">⚙ &nbsp; Settings</div></aside>
+          <div class="mainmock">
+            <div class="mock-heading">Your projects</div><div class="mock-sub">Manage local workspaces and MCP connections</div>
+            <div class="project"><div><div class="project-name">my-app</div><div class="project-path">C:/Projects/my-app</div></div><div class="status">Connected</div></div>
+            <div class="project"><div><div class="project-name">website</div><div class="project-path">C:/Projects/website</div></div><div class="status">Connected</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section wrap" id="features">
+      <div class="section-kicker">Why JecBridge</div><h2>Your local workspace, ready for AI.</h2>
+      <p class="section-lead">A lightweight desktop control center for connecting the folders you choose to your AI tools.</p>
+      <div class="features">
+        <article class="feature"><div class="feature-icon">⌁</div><h3>Local project access</h3><p>Choose the folders you want to work with. Keep your projects organized in one desktop workspace.</p></article>
+        <article class="feature"><div class="feature-icon">↗</div><h3>One-click MCP connection</h3><p>Start a project connection and use its MCP endpoint with a compatible AI client.</p></article>
+        <article class="feature"><div class="feature-icon">⌘</div><h3>Built for simplicity</h3><p>No separate Node.js, npm, or Git installation is required to use the Windows app.</p></article>
+      </div>
+    </section>
+    <section class="section wrap" id="how-it-works">
+      <div class="section-kicker">Get started</div><h2>From folder to AI in minutes.</h2>
+      <p class="section-lead">No terminal commands needed for everyday use.</p>
+      <div class="steps">
+        <article class="step"><div class="step-num">01 / ADD</div><h3>Choose a project</h3><p>Add the local folder you want your AI assistant to work with.</p></article>
+        <article class="step"><div class="step-num">02 / CONNECT</div><h3>Start JecBridge</h3><p>Start the connection and copy the MCP endpoint shown in the app.</p></article>
+        <article class="step"><div class="step-num">03 / BUILD</div><h3>Connect your AI client</h3><p>Paste the endpoint into an MCP-compatible client and start working.</p></article>
+      </div>
+    </section>
+    <section class="section wrap" id="download">
+      <div class="download-panel">
+        <div><div class="section-kicker">JecBridge Desktop 0.1.0</div><h2>Bring your projects closer to AI.</h2><p>Windows 10/11 · x64 · Installer includes the required runtime.</p></div>
+        <a class="button primary" href="releases/JecBridge%20Desktop%20Setup%200.1.0.exe" download><span aria-hidden="true">↓</span> Download .exe</a>
+      </div>
+      <div class="author">Created by <a href="https://x.com/abbosby" target="_blank" rel="noopener noreferrer">Abbos (@abbosby)</a></div>
+    </section>
+  </main>
+  <footer><div class="wrap foot"><span>© <span id="year"></span> JecBridge. Built for local-first AI workflows.</span><span>Windows · MCP · Desktop</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
