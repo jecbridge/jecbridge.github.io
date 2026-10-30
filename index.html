@@ -41,24 +41,9 @@
     .primary:hover{box-shadow:0 12px 42px #5794f355}
     .secondary{border:1px solid #34445b;background:#111925;color:#e3ebf8}
     .download-meta{margin-top:13px;color:#75869d;font-size:11px}
-    .preview{position:relative;margin:62px auto 0;max-width:870px;border:1px solid #34445c;border-radius:16px;background:linear-gradient(145deg,#172131,#0c111a);padding:11px;box-shadow:0 35px 110px #0009,0 0 70px #5794f315;text-align:left}
-    .preview:before{content:"";position:absolute;inset:-1px;border-radius:16px;background:linear-gradient(120deg,#8cbaff35,transparent 35%,transparent 70%,#8cbaff20);pointer-events:none}
-    .windowbar{height:29px;display:flex;align-items:center;gap:6px;padding:0 8px 10px;border-bottom:1px solid #ffffff12}
-    .windowbar i{width:7px;height:7px;border-radius:50%;background:#5a6a80}
-    .windowtitle{margin:auto;color:#8798b0;font-size:9px;letter-spacing:.14em}
-    .mock{display:grid;grid-template-columns:185px 1fr;min-height:225px}
-    .sidebar{padding:20px 13px;border-right:1px solid #ffffff12}
-    .side-label{font-size:9px;color:#6d7e96;letter-spacing:.15em;font-weight:800;margin:0 0 13px 8px}
-    .side-item{padding:9px 10px;border-radius:7px;color:#aebbd0;font-size:11px;margin-bottom:5px}
-    .side-item.active{background:#203552;color:#e1edff}
-    .mainmock{padding:21px 24px}
-    .mock-heading{font:600 18px "Space Grotesk";letter-spacing:-.04em;margin-bottom:3px}
-    .mock-sub{font-size:10px;color:#8191a8;margin-bottom:17px}
-    .project{display:flex;align-items:center;justify-content:space-between;border:1px solid #2b394d;background:#131d2b;padding:12px 14px;border-radius:9px;margin-bottom:9px}
-    .project-name{font-size:11px;font-weight:700}
-    .project-path{font-size:9px;color:#7f90a8;margin-top:3px}
-    .status{font-size:9px;color:#a2e8bb;display:flex;align-items:center;gap:6px}
-    .status:before{content:"";width:6px;height:6px;border-radius:50%;background:#80dca2;box-shadow:0 0 8px #80dca2}
+    .preview{position:relative;margin:62px auto 0;max-width:1000px;border:1px solid #34445c;border-radius:16px;background:#0c111a;padding:9px;box-shadow:0 35px 110px #0009,0 0 70px #5794f315;overflow:hidden}
+    .preview:before{content:"";position:absolute;inset:0;border-radius:16px;background:linear-gradient(120deg,#8cbaff25,transparent 35%,transparent 70%,#8cbaff18);pointer-events:none;z-index:1}
+    .preview img{display:block;width:100%;height:auto;border-radius:9px;object-fit:contain}
     .section{padding:76px 0}
     .section-kicker{text-transform:uppercase;letter-spacing:.17em;color:#8ebaff;font-size:10px;font-weight:800}
     h2{font-size:clamp(29px,4.2vw,42px);line-height:1.15;letter-spacing:-.06em;margin:12px 0}
@@ -104,16 +89,8 @@
         <a class="button secondary" href="#how-it-works">Explore how it works <span aria-hidden="true">↘</span></a>
       </div>
       <div class="download-meta">Version 0.1.0&nbsp; · &nbsp;Windows 10/11&nbsp; · &nbsp;64-bit&nbsp; · &nbsp;Free beta</div>
-      <div class="preview" aria-label="Illustrative JecBridge Desktop interface preview">
-        <div class="windowbar"><i></i><i></i><i></i><span class="windowtitle">JECBRIDGE DESKTOP</span></div>
-        <div class="mock">
-          <aside class="sidebar"><div class="side-label">WORKSPACE</div><div class="side-item active">▦ &nbsp; Projects</div><div class="side-item">⌘ &nbsp; Connections</div><div class="side-item">⚙ &nbsp; Settings</div></aside>
-          <div class="mainmock">
-            <div class="mock-heading">Your projects</div><div class="mock-sub">Manage local workspaces and MCP connections</div>
-            <div class="project"><div><div class="project-name">my-app</div><div class="project-path">C:/Projects/my-app</div></div><div class="status">Connected</div></div>
-            <div class="project"><div><div class="project-name">website</div><div class="project-path">C:/Projects/website</div></div><div class="status">Connected</div></div>
-          </div>
-        </div>
+      <div class="preview" aria-label="JecBridge Desktop application preview">
+        <img src="assets/banner.png" alt="JecBridge Desktop application interface">
       </div>
     </section>
     <section class="section wrap" id="features">

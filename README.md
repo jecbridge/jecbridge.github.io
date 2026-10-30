@@ -35,6 +35,10 @@ This is a lightweight static website built with:
 - HTML5
 - CSS
 - Google Fonts — DM Sans and Space Grotesk
+- Product preview image — `assets/banner.png`
+- Brand icon and favicon — `assets/icon.png`
+
+The JecBridge Desktop section on the website uses the original banner asset from `assets/banner.png` as its application preview. No new image was generated.
 
 No build step or JavaScript framework is required. GitHub Pages serves the site directly from the repository.
 
@@ -45,6 +49,7 @@ No build step or JavaScript framework is required. GitHub Pages serves the site 
 ├── index.html
 ├── README.md
 ├── assets/
+│   ├── banner.png
 │   └── icon.png
 └── releases/
     └── JecBridge Desktop Setup 0.1.0.exe
