@@ -12,21 +12,23 @@ JecBridge helps you bring your local development workspaces into your AI workflo
 
 - **Local project access** — choose and manage the project folders you want to connect.
 - **MCP connectivity** — expose a project connection for compatible AI clients.
+- **My Skills library** — create, import, edit, and assign reusable AI skills across projects.
+- **In-app updates** — check, download, and install new versions from GitHub Releases.
 - **Simple desktop workflow** — manage connections from a graphical Windows application.
 - **Self-contained installer** — the Windows installer includes the required runtime; users do not need to install Node.js, npm, or Git separately.
 
 ## Download
 
-JecBridge Desktop **0.1.0** is available for:
+JecBridge Desktop **2.0.0** is available for:
 
 - Windows 10 / Windows 11
 - 64-bit (x64)
 
 The installer is named:
 
-`JecBridge Desktop Setup 0.1.0.exe`
+`JecBridge-Desktop-Setup-2.0.0.exe`
 
-> **Release hosting note:** GitHub blocks regular Git commits containing files larger than 100 MB. The current Windows installer is approximately 154 MB, so it should be uploaded as an asset to a GitHub Release (or hosted through Git LFS / another download host), rather than committed directly to this website repository. The website's download link expects the installer at `releases/JecBridge Desktop Setup 0.1.0.exe`; update that link to the published release asset URL when the release is uploaded.
+The Windows installer is hosted as an asset on the [JecBridge Desktop v2.0.0 GitHub Release](https://github.com/sanakulovme/JecBridge-Desktop/releases/tag/v2.0.0). The website download buttons link directly to that release asset.
 
 ## Website
 
@@ -51,8 +53,6 @@ No build step or JavaScript framework is required. GitHub Pages serves the site 
 ├── assets/
 │   ├── banner.png
 │   └── icon.png
-└── releases/
-    └── JecBridge Desktop Setup 0.1.0.exe
 ```
 
 ## Author
